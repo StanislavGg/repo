@@ -43,7 +43,8 @@
             this.showTBValue = new System.Windows.Forms.Label();
             this.genreCB = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.backBtn = new System.Windows.Forms.Button();
+            this.showBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.rateTB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,22 +194,33 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "minutes";
             // 
-            // backBtn
+            // showBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(237, 262);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(75, 23);
-            this.backBtn.TabIndex = 17;
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            this.showBtn.Location = new System.Drawing.Point(237, 262);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(75, 23);
+            this.showBtn.TabIndex = 17;
+            this.showBtn.Text = "Show";
+            this.showBtn.UseVisualStyleBackColor = true;
+            this.showBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Location = new System.Drawing.Point(125, 262);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.TabIndex = 18;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // addMoviesF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 299);
-            this.Controls.Add(this.backBtn);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.showBtn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.genreCB);
             this.Controls.Add(this.showTBValue);
@@ -251,6 +263,7 @@
         private System.Windows.Forms.Label showTBValue;
         private System.Windows.Forms.ComboBox genreCB;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button showBtn;
+        private System.Windows.Forms.Button searchBtn;
     }
 }

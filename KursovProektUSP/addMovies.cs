@@ -19,7 +19,7 @@ namespace KursovProektUSP
             InitializeComponent();
         }
 
-        private void SetButton()
+        private void SetButton() // Enables the Add button only if all fields are filled
         {
             addToDB.Enabled = (titleTB.Text != "" && genreCB.SelectedIndex != -1 && yearTB.Text != "" && lengthTB.Text != "" && showTBValue.Text != "Rate" && showTBValue.Text != "0");
         }
@@ -30,7 +30,7 @@ namespace KursovProektUSP
             showTBValue.Text = rateTB.Value.ToString();
         }
 
-        private void addToDB_Click(object sender, EventArgs e)
+        private void addToDB_Click(object sender, EventArgs e) //Adds data to the database 
         {
             string hasOscar="";
             string connectionString = "Data Source=Admin-PC;User Id=USP;Password=usp;";
@@ -66,6 +66,7 @@ namespace KursovProektUSP
                 lengthTB.Text = "";
                 showTBValue.Text = "";
                 rateTB.Value = 0;
+                oscar.Checked = false;
             }
             catch (OracleException e1)
             {
@@ -77,7 +78,7 @@ namespace KursovProektUSP
             }
         }
 
-        private void yearTB_KeyPress(object sender, KeyPressEventArgs e)
+        private void yearTB_KeyPress(object sender, KeyPressEventArgs e) //Only numbers for Year validation
         {
             if (e.KeyChar >= '0' && e.KeyChar <= '9'|| e.KeyChar == '\b')
             {
@@ -90,7 +91,7 @@ namespace KursovProektUSP
             }     
         }
 
-        private void lengthTB_KeyPress(object sender, KeyPressEventArgs e)
+        private void lengthTB_KeyPress(object sender, KeyPressEventArgs e) //Only numbers for Length validation
         {
             if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == '\b')
             {
@@ -131,12 +132,20 @@ namespace KursovProektUSP
             SetButton();
         }
 
-        private void backBtn_Click(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e) // Navigates through Forms
         {
             this.Hide();
             showMoviesF f1 = new showMoviesF();
             f1.Closed += (s, args) => this.Close();
             f1.Show();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            searchMoviesF f2 = new searchMoviesF();
+            f2.Closed += (s, args) => this.Close();
+            f2.Show();
         }
 
        

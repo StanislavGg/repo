@@ -17,14 +17,14 @@ namespace KursovProektUSP
         {
             InitializeComponent();
         }
-        public OracleConnection ConnectToDB()
+        public OracleConnection ConnectToDB() // Establish database connection
         {
             string connectionString = "Data Source=Admin-PC;User Id=USP;Password=usp;";
             OracleConnection conn = new OracleConnection(connectionString);
             return conn;
         }
 
-        public void read()
+        public void read() // Load data from database into DataGridView
         {
             try
             {
@@ -46,7 +46,7 @@ namespace KursovProektUSP
             }
         }
  
-        private void addMovieB_Click(object sender, EventArgs e)
+        private void addMovieB_Click(object sender, EventArgs e) //Navigate through Forms
         {
             this.Hide();
             addMoviesF f = new addMoviesF();
@@ -64,7 +64,12 @@ namespace KursovProektUSP
 
         private void showMoviesF_Load(object sender, EventArgs e)
         {
-            read();
+            read(); //Fill DataGridView with data
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
